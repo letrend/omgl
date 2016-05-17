@@ -86,6 +86,11 @@ void Renderer::renderColor(Mesh *mesh, VectorXd &pose) {
     renderColor(mesh);
 }
 
+void Renderer::renderColor(Mesh *mesh, Matrix4f &pose) {
+    ViewMatrix = pose;
+    renderColor(mesh);
+}
+
 void Renderer::renderColor(Mesh *mesh) {
     Eigen::Matrix4f MVP = ProjectionMatrix * ViewMatrix * mesh->ModelMatrix;
 

@@ -49,6 +49,8 @@ public:
 
     void renderColor(Mesh *mesh, VectorXd &pose);
 
+    void renderColor(Mesh *mesh, Matrix4f &pose);
+
     void renderColor(Mesh *mesh);
 
     void getImage(Mat &img);
