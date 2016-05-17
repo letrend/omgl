@@ -15,6 +15,7 @@ public:
     Model(const char* rootDirectory, const char* modelFile);
     ~Model();
     void render(VectorXd &pose, Mat &img);
+    void render(Matrix4f &pose, Mat &img);
     void render(Mat &img);
     void updateViewMatrix(sf::Window &window);
     Renderer *renderer;

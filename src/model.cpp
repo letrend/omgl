@@ -89,6 +89,14 @@ void Model::render(VectorXd &pose, Mat &img){
     return renderer->getImage(img);
 }
 
+void Model::render(Matrix4f &pose, Mat &img){
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    for(uint mesh=0; mesh<meshes.size(); mesh++){
+        renderer->renderColor(meshes[mesh], pose);
+    }
+    return renderer->getImage(img);
+}
+
 void Model::render(Mat &img){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     for(uint mesh=0; mesh<meshes.size(); mesh++){
