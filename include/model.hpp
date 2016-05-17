@@ -18,6 +18,7 @@ public:
     void render(Matrix4f &pose, Mat &img);
     void render(Mat &img);
     void updateViewMatrix(sf::Window &window);
+    void lookAt(Vector3f &point, Vector3f cameraPosition);
     Renderer *renderer;
 private:
     vector<Mesh*> meshes;
