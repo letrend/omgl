@@ -87,7 +87,7 @@ void Renderer::renderColor(Mesh *mesh, VectorXd &pose) {
 }
 
 void Renderer::renderColor(Mesh *mesh, Matrix4f &pose) {
-    ViewMatrix = pose;
+    mesh->ModelMatrix = pose;
     renderColor(mesh);
 }
 

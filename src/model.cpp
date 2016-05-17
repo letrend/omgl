@@ -106,7 +106,7 @@ void Model::render(Mat &img){
 }
 
 void Model::updateViewMatrix(sf::Window &window){
-    float speed_trans = 0.01f , speed_rot = 0.001f;
+    float speed_trans = 0.05f , speed_rot = 0.001f;
 
     // Get mouse position
     sf::Vector2i windowsize = sf::Vector2i(window.getSize().x, window.getSize().y);
@@ -161,9 +161,9 @@ void Model::updateViewMatrix(sf::Window &window){
     renderer->ViewMatrix = RT*renderer->ViewMatrix;
 }
 
-void Model::lookAt(Vector3f &point, Vector3f cameraPosition){
+void Model::lookAt(Vector3f &point, Vector3f &cameraPosition){
     glm::mat4 vm = glm::lookAt(glm::vec3(cameraPosition(0), cameraPosition(1), cameraPosition(2)),
-                    glm::vec3(point(0), point(1), point(2)),
-                    glm::vec3(0, 1, 0));
+                               glm::vec3(point(0), point(1), point(2)),
+                               glm::vec3(0, 1, 0));
     renderer->ViewMatrix = Eigen::Matrix4f(&vm[0][0]);
 }
